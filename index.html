@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donald Trump Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/countdown.min.js"></script>
+</head>
+<body>
+
+    <a href="https://maugelves.com">Volver a Maugelves</a>
+
+    <h1>Donald Trump Countdown</h1>
+
+    <p>This human being finishes his mandate on:<br><span></span></p>
+
+    <div class="clock">
+        <img src="img/base.png" class="base">
+        <img src="img/hour-arm.png" alt="hour arm" class="arm hour">
+        <img src="img/minute-arm.png" alt="minute arm" class="arm minute">
+
+        <!-- DT Faces -->
+        <img src="img/dt-00.png" class="dt-face dt-00 active" data-key="0" alt="Donald Trump">
+        <img src="img/dt-01.png" class="dt-face dt-01" data-key="1" alt="Donald Trump">
+        <img src="img/dt-02.png" class="dt-face dt-02" data-key="2" alt="Donald Trump">
+        <img src="img/dt-03.png" class="dt-face dt-03" data-key="3" alt="Donald Trump">
+        <img src="img/dt-04.png" class="dt-face dt-04" data-key="4" alt="Donald Trump">
+        <img src="img/dt-05.png" class="dt-face dt-05" data-key="5" alt="Donald Trump">
+        <img src="img/dt-06.png" class="dt-face dt-06" data-key="6" alt="Donald Trump">
+        <img src="img/dt-07.png" class="dt-face dt-07" data-key="7" alt="Donald Trump">
+        <img src="img/dt-08.png" class="dt-face dt-08" data-key="8" alt="Donald Trump">
+        <img src="img/dt-09.png" class="dt-face dt-09" data-key="9" alt="Donald Trump">
+    </div>
+
+    <audio src="audio/tick.mp3"></audio>
+
+    <script>
+
+        const minuteHand = document.querySelector('.minute.arm');
+        const hourHand = document.querySelector('.hour.arm');
+        const finish = document.querySelector('p span');
+        const audio = document.querySelector('audio');
+        setInterval(tick, 1000);
+
+
+
+        function tick(){
+
+            var timespan = countdown( new Date(2021, 0, 20) ).toString();
+            // Set the time
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+            const minutesDegrees = (minutes/60) * 360;
+            minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+            const hours = now.getHours();
+            const hoursDegrees = (hours/12) * 360 + 2;
+            hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+
+            // Remove head
+            var faces = document.getElementsByClassName("dt-face");
+            for (var i = 0; i < faces.length; i++) {
+                faces[i].classList.remove("active");
+            }
+
+            // Get the specific head and activate it
+            var face = document.querySelector("[data-key='" + seconds%faces.length + "']");
+            face.classList.add("active");
+
+            // Replace the countdown text
+            finish.innerHTML = timespan;
+
+            // Play the sound
+            audio.play();
+        }
+
+
+    </script>
+</body>
+</html>

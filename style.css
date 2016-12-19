@@ -1,0 +1,140 @@
+body {
+    align-items: center;
+    background-image: url("img/wood.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    margin:0;
+    padding:0;
+    width: 100vw;
+}
+
+h1 {
+    color: white;
+    font-family: Roboto;
+    font-size: 4em;
+    text-shadow: -4px 2px 2px rgba(0, 0, 0, 1);
+}
+
+a{
+    color: white;
+    font-family: Roboto;
+    font-size: 1.6em;
+    text-shadow: -4px 2px 2px rgba(0, 0, 0, 1);
+}
+
+p{
+    color: white;
+    font-size: 25px;
+    font-family: Roboto;
+    padding: 30px;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.clock {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 535px;
+    position: relative;
+}
+
+.base {
+    height: auto;
+    max-width: 600px;
+    width: 90%;
+}
+
+.arm {
+    position: absolute;
+    transition: all 0.4s;
+    transition-timing-function: cubic-bezier(0.02, 2.62, 0.58, 1);
+    width: 10%;
+}
+
+.minute {
+    top: 11.4%;
+    right: 43.4%;
+    z-index: 100;
+
+    transform: rotate(45deg);
+    -ms-transform-origin: 44% 95%; /* IE 9 */
+    -webkit-transform-origin: 44% 95%; /* Chrome, Safari, Opera */
+    transform-origin: 44% 95%;
+}
+
+.hour {
+    top: 21%;
+    right: 44%;
+    z-index: 120;
+
+    -ms-transform-origin: 47% 94%;; /* IE 9 */
+    -webkit-transform-origin: 47% 94%;; /* Chrome, Safari, Opera */
+    transform-origin: 47% 94%;;
+}
+
+
+.dt-face {
+    display: none;
+    position: absolute;
+    z-index: 80;
+}
+
+.dt-face.active {
+    display: blocK
+}
+
+/* DT Faces Adjustments */
+.dt-00 {
+    height: 24%;
+    top: 25%;
+    right: 43%;
+}
+.dt-01 {
+    height: 24%;
+    top: 25%;
+    right: 44%;
+}
+.dt-02 {
+    height: 22%;
+    top: 27%;
+    right: 44%;
+}
+.dt-03 {
+    height: 22%;
+    top: 28%;
+    right: 43%;
+}
+.dt-04 {
+    height: 22%;
+    top: 27%;
+    right: 43%;
+}
+.dt-05 {
+    height: 22%;
+    top: 27%;
+    right: 43%;
+}
+.dt-06 {
+    height: 22%;
+    top: 28%;
+    right: 43%;
+}
+.dt-07 {
+    height: 21%;
+    top: 28%;
+    right: 44%;
+}
+.dt-08 {
+    height: 22%;
+    top: 28%;
+    right: 44%;
+}
+.dt-09 {
+    height: 23%;
+    top: 26%;
+    right: 43%;
+}
