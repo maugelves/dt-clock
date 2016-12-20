@@ -59,7 +59,8 @@
 
             // Remove head
             var faces = document.getElementsByClassName("dt-face");
-            for (var i = 0; i < faces.length; i++) {
+            var facesCount = faces.length;
+            for (var i = 0; i < facesCount; i++) {
                 faces[i].classList.remove("active");
             }
 
